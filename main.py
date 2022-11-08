@@ -4,8 +4,12 @@ app = Flask(__name__)
 
 @app.get("/")
 def main():
+    print(request.headers)
     try:
-        ip =  request.headers["x-real-ip"]
+        ip_add =  request.headers["X-Forwarded-For"]
+        print(ip_add)
+        ip = ip_add.split(",")[0]
+        print(ip)
     except:
         ip = request.remote_addr
     

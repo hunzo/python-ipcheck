@@ -4,7 +4,7 @@ services:
     build: .
     # command: gunicorn main:app --bind 0.0.0.0:8000 -w 2 --reload --log-level "debug"
     command: gunicorn main:app --bind 0.0.0.0:8000 -w 2 --reload
-    restart: aways
+    restart: always
     expose:
       - 8000
     networks:
